@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - my-network
+  backend:
+    build:
+      context: ./p-f-e-v2
+    image: monutilisateurdocker/p-f-e-v2
+    container_name: spring-backend
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    networks:
+      - my-network
+
+  frontend:
+    build:
+      context: ./frontend-app-v1
+    image: monutilisateurdocker/frontend-app-v1
+    container_name: angular-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+
+volumes:
+  db-data:
+
+networks:
+  my-network:
+
