@@ -1,0 +1,25 @@
+<div class="notification-container">
+  <div class="notification-badge" *ngIf="unreadCount > 0">
+    {{ unreadCount }}
+  </div>
+
+  <div class="notification-list">
+    <div *ngFor="let notification of notifications" 
+         class="notification-item"
+         [class.unread]="!notification.isRead"
+         (click)="markAsRead(notification)">
+      
+      <div class="notification-header">
+        <span class="notification-type" [class]="notification.type.toLowerCase()">
+          {{ notification.type }}
+        </span>
+        <span class="notification-time">
+          {{ notification.timestamp | date:'shortTime' }}
+        </span>
+      </div>
+      
+      <div class="notification-title">{{ notification.title }}</div>
+      <div class="notification-content">{{ notification.content }}</div>
+    </div>
+  </div>
+</div>

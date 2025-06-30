@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg form-container">
+      <h2 class="text-center mb-4">Liste des Prestataires</h2>
+  
+      <!-- Liste des prestataires -->
+      <ul class="list-group mb-4">
+        <li *ngFor="let p of prestataires" class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            {{ p.num }} - {{ p.email }} - {{ p.specialite }}
+          </div>
+          <button class="btn btn-danger" (click)="deletePrestataire(p.id!)">Supprimer</button>
+        </li>
+      </ul>
+  
+      <!-- Formulaire d'ajout de prestataire -->
+      <h3 class="text-center mb-4">Ajouter un Prestataire</h3>
+      <form (ngSubmit)="addPrestataire()">
+        <div class="mb-3">
+          <input type="text" [(ngModel)]="newPrestataire.num" name="num" class="form-control" placeholder="Numéro" required />
+        </div>
+        <div class="mb-3">
+          <input type="email" [(ngModel)]="newPrestataire.email" name="email" class="form-control" placeholder="Email" required />
+        </div>
+        <div class="mb-3">
+          <input type="password" [(ngModel)]="newPrestataire.mdpHash" name="mdpHash" class="form-control" placeholder="Mot de passe" required />
+        </div>
+        <div class="mb-3">
+          <input type="text" [(ngModel)]="newPrestataire.specialite" name="specialite" class="form-control" placeholder="Spécialité" required />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-5">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,87 @@
+/* Assurez-vous que cette CSS soit dans le fichier .component.css ou dans le global CSS si vous l'appliquez à toute l'application */
+
+.list-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Légèrement transparent */
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    backdrop-filter: blur(10px); /* Applique un flou de fond, optionnel */
+  }
+  
+  .min-vh-100 {
+    min-height: 100vh;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .mat-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+  
+  .mat-list-item:last-child {
+    border-bottom: none;
+  }
+  
+/* Modifier les couleurs des boutons pour qu'ils soient bleus */
+/* Forcer les boutons avec la couleur bleue (avec !important) */
+button.mat-raised-button.color-accent {
+    background-color: #007bff !important;  /* Couleur bleue */
+    color: white !important;
+    border: none !important; /* Enlever la bordure si nécessaire */
+  }
+  
+  button.mat-raised-button.color-warn {
+    background-color: #0056b3 !important;  /* Couleur bleue plus foncée pour "Supprimer" */
+    color: white !important;
+    border: none !important;
+  }
+  
+  a.mat-raised-button.color-accent {
+    background-color: #007bff !important;  /* Couleur bleue pour le lien aussi */
+    color: white !important;
+    padding: 10px 20px !important;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px; /* Pour arrondir les bords */
+    text-decoration: none;
+  }
+  /* Appliquer une couleur bleue personnalisée pour les boutons */
+.btn-blue {
+    background-color: #007bff !important;  /* Couleur bleue */
+    color: white !important; /* Texte en blanc */
+    border: none !important;  /* Enlever la bordure */
+  }
+  
+  /* Optionnel: Si tu veux un bleu plus foncé pour le bouton "Supprimer" */
+  .btn-blue.btn-warn {
+    background-color: #0056b3 !important;  /* Bleu plus foncé pour "Supprimer" */
+    color: white !important;
+    border: none !important;
+  }
+  

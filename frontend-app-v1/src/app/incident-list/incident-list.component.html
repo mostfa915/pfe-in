@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow-lg w-75">
+    <h2 class="text-center mb-4">Liste des Incidents</h2>
+
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Description</th>
+          <th>Priorité</th>
+          <th>Statut</th>
+          <th>Fichier</th>
+          <th>Déclarant</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let incident of incidents">
+          <td>{{ incident.description }}</td>
+          <td>{{ incident.priorite }}</td>
+          <td>{{ incident.statut }}</td>
+          <td>
+            <a *ngIf="incident.survChat" [href]="incident.survChat" target="_blank">Voir {{incident.survChat}}</a>
+          </td>
+         
+
+          <td>{{ incident.declarant.nom }}</td>
+          <td>
+            <a [routerLink]="['/incidents/edit', incident.id]" class="btn btn-sm btn-warning me-2">Modifier</a>
+            <button (click)="onDeleteIncident(incident.id)" class="btn btn-sm btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+     <div class="text-center">
+        <a routerLink="/ajouter-incident" class="btn btn-success">➕ Ajouter un incident</a>
+      </div>
+  </div>
+</div>
+

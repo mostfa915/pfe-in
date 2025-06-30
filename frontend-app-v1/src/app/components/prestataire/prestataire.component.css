@@ -1,0 +1,64 @@
+/* Centrage du formulaire */
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Style des cartes */
+  .card {
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  /* Espacement des éléments de formulaire */
+  .mb-3 {
+    margin-bottom: 20px;
+  }
+  
+  /* Style des boutons */
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* Liste des prestataires */
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Titre */
+  h2, h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  

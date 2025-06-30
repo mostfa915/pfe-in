@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow-lg form-container">
+    <h2 class="text-center mb-4">Ajouter un Document</h2>
+    <form (ngSubmit)="onSubmit()">
+      
+      <!-- Titre -->
+      <div class="mb-3">
+        <label for="titre" class="form-label">Titre</label>
+        <input type="text" id="titre" [(ngModel)]="document.titre" name="titre" class="form-control" required>
+      </div>
+
+      <!-- Type -->
+      <div class="mb-3">
+        <label for="type" class="form-label">Type</label>
+        <select id="type" [(ngModel)]="document.type" name="type" class="form-select" required>
+          <option value="COMPTE_RENDU">Compte Rendu</option>
+          <option value="REGLEMENT">Règlement</option>
+          <option value="BUDGET">Budget</option>
+          <option value="AUTRE">Autre</option>
+        </select>
+      </div>
+
+      <!-- Fichier -->
+      <div class="mb-3">
+        <label for="file" class="form-label">Fichier</label>
+        <input type="file" id="file" (change)="onFileSelected($event)" accept=".pdf,image/*" class="form-control" required>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-5">Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  

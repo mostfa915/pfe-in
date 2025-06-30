@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg form-container">
+      <h2 class="text-center mb-4">Connexion</h2>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <!-- Champ Email -->
+        <mat-form-field appearance="outline" class="w-100 mb-3">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            L'email est obligatoire
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Veuillez entrer un email valide
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Champ Mot de passe -->
+        <mat-form-field appearance="outline" class="w-100 mb-3">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" required>
+          <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Le mot de passe est obligatoire
+          </mat-error>
+        </mat-form-field>
+  
+        <div class="forgot-password mb-3 text-end">
+          <a routerLink="/forgot-password">Mot de passe oublié ?</a>
+        </div>
+  
+        <div class="text-center mb-3">
+          <button mat-raised-button color="primary" type="submit" class="w-100" [disabled]="!loginForm.valid || isLoading">
+            <span *ngIf="!isLoading">Se connecter</span>
+            <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+          </button>
+        </div>
+  
+        <div *ngIf="errorMessage" class="error-message text-center text-danger mb-3">
+          <mat-icon>error_outline</mat-icon>
+          {{ errorMessage }}
+        </div>
+  
+        <div class="register-link text-center">
+          <span>Nouveau utilisateur ? </span>
+          <a routerLink="/syndics/new" >Créer un compte</a>
+        </div>
+      </form>
+    </div>
+  </div>
+      

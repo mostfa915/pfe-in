@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg w-75">
+      <h2 class="text-center mb-4">Liste des Syndics</h2>
+  
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Num</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let syndic of syndics">
+            <td>{{ syndic.num }}</td>
+            <td>{{ syndic.email }}</td>
+            <td>
+              <a [routerLink]="['/syndics/edit', syndic.id]" class="btn btn-sm btn-warning me-2">Modifier</a>
+              <button (click)="deleteSyndic(syndic.id)" class="btn btn-sm btn-danger">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="text-center mt-3">
+        <a routerLink="/syndics/new" class="btn btn-success">Ajouter un Syndic</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg form-container">
+      <h2 class="text-center mb-4">Modifier le Document</h2>
+      <form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+        
+        <!-- Titre -->
+        <div class="mb-3">
+          <label for="titre" class="form-label">Titre</label>
+          <input type="text" id="titre" class="form-control" formControlName="titre" />
+        </div>
+  
+        <!-- Type -->
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <select id="type" class="form-select" formControlName="type">
+            <option value="COMPTE_RENDU">COMPTE_RENDU</option>
+            <option value="REGLEMENT">REGLEMENT</option>
+            <option value="BUDGET">BUDGET</option>
+            <option value="AUTRE">AUTRE</option>
+          </select>
+        </div>
+  
+        <!-- Nom du fichier -->
+        <div class="mb-3">
+          <label for="nomFichier" class="form-label">Nom du Fichier</label>
+          <input type="text" id="nomFichier" class="form-control" formControlName="nomFichier" />
+        </div>
+  
+        <!-- Chemin du fichier -->
+        <div class="mb-3">
+          <label for="cheminFichier" class="form-label">Chemin du Fichier</label>
+          <input type="text" id="cheminFichier" class="form-control" formControlName="cheminFichier" />
+        </div>
+  
+        <!-- Bouton de soumission -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-5">Mettre à jour</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Toast de confirmation -->
+ 

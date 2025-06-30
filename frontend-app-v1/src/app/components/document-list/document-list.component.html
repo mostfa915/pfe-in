@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg form-container">
+      <h2 class="text-center mb-4">Liste des Documents</h2>
+      <ul class="document-list">
+        <li *ngFor="let document of documents" class="document-item">
+          {{ document.titre }} - {{ document.type }} - 
+          <a [routerLink]="['/documents', document.id]" class="btn-view">Voir</a>
+          <a [routerLink]="['/documents/edit', document.id]" class="btn-edit">Modifier</a>
+          <button (click)="deleteDocument(document.id)" class="btn-delete">Supprimer</button>
+        </li>
+      </ul>
+     <div class="text-center">
+        <a routerLink="/documents/ajouter" class="btn btn-success">➕ Ajouter un document</a>
+      </div>
+    </div>
+    
+  </div>
+  

@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="card direct-chat direct-chat-primary" style="width: 100%; max-width: 500px;">
+    <!-- Ton contenu ici -->
+  
+
+
+<div class="card direct-chat direct-chat-primary" style="max-width: 500px;">
+  <div class="card-header">
+    <h3 class="card-title">Messages</h3>
+    <div class="card-tools">
+      <span *ngIf="unreadCount > 0" class="badge badge-primary">{{unreadCount}} non lus</span>
+      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle"><i class="fas fa-comments"></i></button>
+      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="direct-chat-messages" style="height: 300px; overflow-y: auto;">
+      <div *ngFor="let comm of communications" 
+           class="direct-chat-msg" 
+          
+           (click)="markAsRead(comm)">
+           
+        <div class="direct-chat-infos clearfix">
+          <span class="direct-chat-name" 
+             >
+            {{ comm.sender?.email }}
+          </span>
+          <span class="direct-chat-timestamp" 
+               >
+            {{ comm.dateCreation | date:'short' }}
+          </span>
+        </div>
+        <img class="direct-chat-img" src="assets/images/user.png" alt="user image">
+        <div class="direct-chat-text">
+          {{ comm.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="input-group">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Écrivez votre message..." class="form-control">
+      <span class="input-group-append">
+        <button class="btn btn-primary" (click)="sendMessage()" [disabled]="!newMessage.trim()">Envoyer</button>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+</div>

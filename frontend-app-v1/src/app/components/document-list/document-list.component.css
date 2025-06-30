@@ -1,0 +1,71 @@
+/* Centrer le contenu au centre de la page */
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Style de la carte qui contient la liste */
+  .card {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+  }
+  
+  /* Style des éléments de la liste des documents */
+  .document-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style des éléments de chaque document */
+  .document-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Style des boutons et liens */
+  .btn-view {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .btn-edit {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Effet de survol pour les boutons */
+  .btn-view:hover,
+  .btn-edit:hover,
+  .btn-delete:hover {
+    opacity: 0.8;
+  }
+  
+  /* Style du titre */
+  h2 {
+    margin-bottom: 20px;
+  }
+  
