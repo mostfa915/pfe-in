@@ -15,9 +15,19 @@ pipeline {
             }
         }
 
+        stage('Test Backend') {
+            steps {
+                dir('p-f-e-v2') {
+                    echo "🧪 Exécution des tests unitaires backend..."
+                    sh './mvnw test'
+                }
+            }
+        }
+
         stage('Build Backend') {
             steps {
                 dir('p-f-e-v2') {
+                    echo "🔨 Build du backend Spring Boot..."
                     sh './mvnw clean package -DskipTests'
                 }
             }
@@ -26,6 +36,7 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 dir('frontend-app-v1') {
+                    echo "🧱 Build du frontend Angular..."
                     sh 'npm install'
                     sh 'npm run build -- --configuration production'
                 }
@@ -75,6 +86,5 @@ pipeline {
         }
     }
 }
-
 
 
