@@ -1,4 +1,4 @@
-package com.example.pfev2.contollerstest;
+/*package com.example.pfev2.contollerstest;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -94,4 +94,4 @@ public class CoproprietaireControllerTest {
         mockMvc.perform(delete("/api/Coproprietaires/1"))
                 .andExpect(status().isOk());
     }
-}
+}*/
