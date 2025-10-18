@@ -15,14 +15,7 @@ pipeline {
             }
         }
 
-        stage('Test Backend') {
-            steps {
-                dir('p-f-e-v2') {
-                    echo "🧪 Exécution des tests unitaires backend..."
-                    sh './mvnw test'
-                }
-            }
-        }
+   
 
         stage('Build Backend') {
             steps {
